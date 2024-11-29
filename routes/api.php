@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\V1\Auth\RegisterController;
 use App\Http\Controllers\Api\V1\Auth\LoginController;
 use App\Http\Controllers\Api\V1\Auth\ProfileController;
 use App\Http\Controllers\Api\V1\Auth\PasswordUpdateController;
+use App\Http\Controllers\Api\V1\Auth\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,5 +21,8 @@ Route::prefix("auth")->group(function () {
         Route::put('profile', action: [ProfileController::class, 'update']);
         // password update
         Route::put('password', PasswordUpdateController::class);
+        // logout
+        Route::post('logout', LogoutController::class);
+
     });
 });
