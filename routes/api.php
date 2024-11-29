@@ -9,6 +9,8 @@ use App\Http\Controllers\Api\V1\Auth\LogoutController;
 use App\Http\Controllers\Api\V1\VehicleController;
 // Zones
 use App\Http\Controllers\Api\V1\ZoneController;
+// Parkings
+use App\Http\Controllers\Api\V1\ParkingController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +37,13 @@ Route::prefix("auth")->group(function () {
 Route::middleware('auth:sanctum')->group(function () {
     // Vehicles
     Route::apiResource('vehicles', VehicleController::class);
+    // Parkings
+    Route::prefix('parkings')->group(function () {
+        Route::post('start', [ParkingController::class, 'start']);
+        Route::get('{parking}', [ParkingController::class, 'show']);
+        Route::put('{parking}', [ParkingController::class, 'stop']);
+    });
+
 });
 
 
