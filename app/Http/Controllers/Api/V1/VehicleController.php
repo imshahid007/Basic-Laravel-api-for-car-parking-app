@@ -7,7 +7,6 @@ use App\Models\Vehicle;
 use App\Http\Requests\VehicleRequest;
 use App\Http\Resources\VehicleResource;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Response;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class VehicleController extends Controller
