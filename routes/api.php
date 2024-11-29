@@ -7,6 +7,9 @@ use App\Http\Controllers\Api\V1\Auth\PasswordUpdateController;
 use App\Http\Controllers\Api\V1\Auth\LogoutController;
 // Vehicles
 use App\Http\Controllers\Api\V1\VehicleController;
+// Zones
+use App\Http\Controllers\Api\V1\ZoneController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,3 +36,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // Vehicles
     Route::apiResource('vehicles', VehicleController::class);
 });
+
+
+// Public routes
+Route::get('zones', [ZoneController::class, 'index']);
+
