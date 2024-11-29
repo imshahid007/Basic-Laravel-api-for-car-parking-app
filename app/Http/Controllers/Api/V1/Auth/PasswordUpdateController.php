@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserPasswordRequest;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 
 class PasswordUpdateController extends Controller
