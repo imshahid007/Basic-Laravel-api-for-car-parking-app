@@ -16,5 +16,6 @@ Route::prefix("auth")->group(function () {
     // Authenticated routes
     Route::middleware('auth:sanctum')->group(function () {
         Route::get('profile', action: [ProfileController::class, 'show']);
+        Route::put('profile', action: [ProfileController::class, 'update']);
     });
 });
