@@ -1,4 +1,4 @@
-# Car Parking Management System
+# Car Parking Management System (API ONLY)
 
 This project is a Car Parking Management System built with Laravel. It allows users to manage car parking spaces, track parked cars, and handle parking fees.
 
@@ -58,6 +58,12 @@ This project is a Car Parking Management System built with Laravel. It allows us
     php artisan serve
     ```
 
+10. Generate and View the documentation
+    ```bash
+    php artisan scribe:generate
+    ```
+
+
 ## Usage
 
 - Register or log in to the system.
@@ -77,3 +83,17 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - Laravel framework
 - Community contributors
+
+## REST API Documentation
+http://yourwebsite.com/docs
+
+Example:-
+
+http://127.0.0.1:8000/docs
+
+
+## Tools
+- Pest (Feature and Unit) for testing
+- Pint (PHP code style fixer)
+- Auth Sanctum (For authentication REST)
+- Scribe (For API Doc Generate)
