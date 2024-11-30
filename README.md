@@ -1,22 +1,79 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Car Parking Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a Car Parking Management System built with Laravel. It allows users to manage car parking spaces, track parked cars, and handle parking fees.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- User authentication (Login & Register)
+- Update Profile
+- Update Password
+- Manage Vehicles
+- Manage parking spaces
+- Track parked cars
+- Calculate and handle parking fees
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requirements
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP >= 8.2
+- Composer
+- Laravel >= 11.x
+- MySQL
+
+## Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/imshahid007/basic-laravel-api-car-parking-app
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd basic-laravel-api-car-parking-app
+    ```
+3. Install dependencies:
+    ```bash
+    composer install
+    ```
+4. Copy the `.env.example` file to `.env`:
+    ```bash
+    cp .env.example .env
+    ```
+5. Generate an application key:
+    ```bash
+    php artisan key:generate
+    ```
+6. Configure your database settings in the `.env` file.
+
+7. Run the database migrations:
+    ```bash
+    php artisan migrate
+    ```
+
+8. Seed the database with initial data (optional):
+    ```bash
+    php artisan db:seed
+    ```
+
+9. Start the development server:
+    ```bash
+    php artisan serve
+    ```
+
+## Usage
+
+- Register or log in to the system.
+- Add and manage parking spaces.
+- Track cars entering and leaving the parking lot.
+- Calculate parking fees based on the duration of stay.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- Laravel framework
+- Community contributors
