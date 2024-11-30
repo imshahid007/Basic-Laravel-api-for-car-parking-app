@@ -5,14 +5,15 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ParkingRequest;
 use App\Http\Resources\ParkingResource;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Response;
 use App\Models\Parking;
-//
 use App\Services\ParkingPriceService;
+use Illuminate\Http\JsonResponse;
+//
+use Illuminate\Http\Response;
 
 /**
  * @group Parking
+ *
  * @authenticated
  */
 class ParkingController extends Controller
@@ -37,24 +38,21 @@ class ParkingController extends Controller
         return ParkingResource::make($parking);
     }
 
-
     public function show(Parking $parking): ParkingResource
     {
         return ParkingResource::make($parking);
     }
 
-
-    public function stop(Parking $parking): ParkingResource | JsonResponse
-{
-    if($parking->stop_time) {
-        return response()->json(['errors' => ['general' => ['Parking already stopped.']], ]
-        , Response::HTTP_UNPROCESSABLE_ENTITY);
+    public function stop(Parking $parking): ParkingResource|JsonResponse
+    {
+        if ($parking->stop_time) {
+            return response()->json(['errors' => ['general' => ['Parking already stopped.']]], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
-    $parking->update([
-        'stop_time' => now(),
-        'total_price' => ParkingPriceService::calculatePrice($parking->zone_id, $parking->start_time),
-    ]);
+        $parking->update([
+            'stop_time' => now(),
+            'total_price' => ParkingPriceService::calculatePrice($parking->zone_id, $parking->start_time),
+        ]);
 
-    return ParkingResource::make($parking);
-}
+        return ParkingResource::make($parking);
+    }
 }

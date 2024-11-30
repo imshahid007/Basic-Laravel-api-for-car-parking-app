@@ -5,7 +5,6 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
 
-
 class UserPasswordRequest extends FormRequest
 {
     /**
@@ -26,7 +25,7 @@ class UserPasswordRequest extends FormRequest
         return [
             //
             'current_password' => ['required', 'current_password'],
-            'password' => ['required','confirmed', Password::defaults()],
+            'password' => ['required', 'confirmed', Password::defaults()],
             'password_confirmation' => ['required'], // adding due to scribe documentation
         ];
     }

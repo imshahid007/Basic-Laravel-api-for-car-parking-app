@@ -2,10 +2,9 @@
 
 namespace App\Http\Resources;
 
+use App\Services\ParkingPriceService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Services\ParkingPriceService;
-
 
 class ParkingResource extends JsonResource
 {
@@ -21,6 +20,7 @@ class ParkingResource extends JsonResource
             $this->start_time,
             $this->stop_time
         );
+
         return [
             'id' => $this->id,
             'zone' => [
@@ -28,7 +28,7 @@ class ParkingResource extends JsonResource
                 'price_per_hour' => $this->zone->price_per_hour,
             ],
             'vehicle' => [
-                'plate_number' => $this->vehicle->plate_number
+                'plate_number' => $this->vehicle->plate_number,
             ],
             'start_time' => $this->start_time->toDateTimeString(),
             'stop_time' => $this->stop_time?->toDateTimeString(),

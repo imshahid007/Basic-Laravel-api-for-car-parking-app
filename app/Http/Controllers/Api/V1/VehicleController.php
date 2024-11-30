@@ -3,15 +3,16 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Vehicle;
 use App\Http\Requests\VehicleRequest;
 use App\Http\Resources\VehicleResource;
+use App\Models\Vehicle;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Response;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\Response;
 
 /**
  * @group Vehicles
+ *
  * @authenticated
  */
 class VehicleController extends Controller
@@ -19,7 +20,7 @@ class VehicleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() : AnonymousResourceCollection
+    public function index(): AnonymousResourceCollection
     {
         //
         return VehicleResource::collection(Vehicle::paginate(10));
@@ -63,9 +64,10 @@ class VehicleController extends Controller
     {
         //
         $vehicle->delete();
+
         //
         return response()->json([
-            "message"=> "Vehicle deleted successfully"
+            'message' => 'Vehicle deleted successfully',
         ], Response::HTTP_OK);
     }
 }
