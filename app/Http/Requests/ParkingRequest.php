@@ -28,7 +28,7 @@ class ParkingRequest extends FormRequest
                 'integer',
                 'exists:vehicles,id,deleted_at,NULL,user_id,'.auth()->id(),
             ],
-            'zone_id'    => ['required', 'integer', 'exists:zones,id'],
+            'zone_id' => ['required', 'integer', 'exists:zones,id'],
         ];
     }
 }

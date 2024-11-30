@@ -23,7 +23,7 @@ test('It can update the user name and email', closure: function () {
     $user = User::factory()->create();
 
     $response = $this->actingAs($user)->putJson('/api/v1/profile', [
-        'name'  => 'John Updated',
+        'name' => 'John Updated',
         'email' => 'john_updated@example.com',
     ]);
 
@@ -33,19 +33,18 @@ test('It can update the user name and email', closure: function () {
         ->assertJsonFragment(['name' => 'John Updated']);
 
     $this->assertDatabaseHas('users', [
-        'name'  => 'John Updated',
+        'name' => 'John Updated',
         'email' => 'john_updated@example.com',
     ]);
 });
-
 
 //
 test('It can update the user password', closure: function () {
     $user = User::factory()->create();
 
     $response = $this->actingAs($user)->putJson('/api/v1/password', [
-        'current_password'      => 'password',
-        'password'              => 'testing123',
+        'current_password' => 'password',
+        'password' => 'testing123',
         'password_confirmation' => 'testing123',
     ]);
 

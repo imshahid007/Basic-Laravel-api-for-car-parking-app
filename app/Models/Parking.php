@@ -2,19 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Attributes\ObservedBy;
-
 use App\Observers\ParkingObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 #[ObservedBy([ParkingObserver::class])]
 class Parking extends Model
 {
     use HasFactory;
+
     //
     /**
      * The attributes that are mass assignable.
@@ -43,7 +42,6 @@ class Parking extends Model
         ];
     }
 
-
     public function zone(): BelongsTo
     {
         return $this->belongsTo(Zone::class);
@@ -63,7 +61,6 @@ class Parking extends Model
     {
         return $query->whereNotNull('stop_time');
     }
-
 
     protected static function booted()
     {

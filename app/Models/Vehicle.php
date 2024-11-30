@@ -3,13 +3,11 @@
 namespace App\Models;
 
 use App\Observers\VehicleObserver;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Builder;
-
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 #[ObservedBy([VehicleObserver::class])]
 class Vehicle extends Model
@@ -26,7 +24,6 @@ class Vehicle extends Model
         'user_id',
         'plate_number',
     ];
-
 
     protected static function booted()
     {

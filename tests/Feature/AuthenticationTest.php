@@ -1,4 +1,5 @@
 <?php
+
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -9,20 +10,19 @@ test('It can login the user with correct credentials', closure: function () {
     $user = User::factory()->create();
 
     $response = $this->postJson('/api/v1/auth/login', [
-        'email'    => $user->email,
+        'email' => $user->email,
         'password' => 'password',
     ]);
 
     $response->assertStatus(201);
 });
 
-
 //
 test('It cannot login the user with incorrect credentials', closure: function () {
     $user = User::factory()->create();
 
     $response = $this->postJson('/api/v1/auth/login', [
-        'email'    => $user->email,
+        'email' => $user->email,
         'password' => 'wrong_password',
     ]);
 
@@ -33,9 +33,9 @@ test('It cannot login the user with incorrect credentials', closure: function ()
 test('It can register the user with correct credentials', closure: function () {
     //
     $response = $this->postJson('/api/v1/auth/register', [
-        'name'                  => 'John Doe',
-        'email'                 => 'john@example.com',
-        'password'              => 'password',
+        'name' => 'John Doe',
+        'email' => 'john@example.com',
+        'password' => 'password',
         'password_confirmation' => 'password',
     ]);
 
@@ -45,27 +45,26 @@ test('It can register the user with correct credentials', closure: function () {
         ]);
 
     $this->assertDatabaseHas('users', [
-        'name'  => 'John Doe',
+        'name' => 'John Doe',
         'email' => 'john@example.com',
     ]);
 });
-
 
 //
 //
 test('It cannot register the user with incorrect credentials', closure: function () {
     //
     $response = $this->postJson('/api/v1/auth/register', [
-        'name'                  => 'John Doe',
-        'email'                 => 'john@example.com',
-        'password'              => 'password',
+        'name' => 'John Doe',
+        'email' => 'john@example.com',
+        'password' => 'password',
         'password_confirmation' => 'wrong_password',
     ]);
 
     $response->assertStatus(422);
 
     $this->assertDatabaseMissing('users', [
-        'name'  => 'John Doe',
+        'name' => 'John Doe',
         'email' => 'john@example.com',
     ]);
 });

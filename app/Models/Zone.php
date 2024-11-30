@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Zone extends Model
 {
@@ -16,6 +16,4 @@ class Zone extends Model
      * @var array<string>
      */
     protected $fillable = ['name', 'price_per_hour'];
-
-
 }
