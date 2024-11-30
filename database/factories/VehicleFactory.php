@@ -18,6 +18,7 @@ class VehicleFactory extends Factory
     {
         return [
             //
+            'plate_number' => strtoupper(fake()->randomLetter()) . fake()->numberBetween(100, 999)
         ];
     }
 }
