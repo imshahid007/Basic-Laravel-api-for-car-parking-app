@@ -8,7 +8,10 @@ use Illuminate\Http\Response;
 use App\Http\Requests\UserProfileRequest;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\JsonResponse;
-
+/**
+ * @group Auth
+ * @authenticated
+ */
 class ProfileController extends Controller
 {
     //

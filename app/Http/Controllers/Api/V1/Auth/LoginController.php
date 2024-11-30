@@ -9,7 +9,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
 
-
+/**
+ * @group Auth
+ */
 class LoginController extends Controller
 {
     //

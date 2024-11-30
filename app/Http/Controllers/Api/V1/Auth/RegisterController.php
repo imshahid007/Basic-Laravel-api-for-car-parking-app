@@ -9,12 +9,11 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserRequest;
-
+/**
+ * @group Auth
+ */
 class RegisterController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
     public function __invoke(UserRequest $request): JsonResponse
     {
 

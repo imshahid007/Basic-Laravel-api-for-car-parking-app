@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-
+/**
+ * @group Auth
+ * @authenticated
+ */
 class LogoutController extends Controller
 {
     //

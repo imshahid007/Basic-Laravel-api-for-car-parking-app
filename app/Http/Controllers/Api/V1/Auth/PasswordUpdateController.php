@@ -7,7 +7,10 @@ use App\Http\Requests\UserPasswordRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
-
+/**
+ * @group Auth
+ * @authenticated
+ */
 class PasswordUpdateController extends Controller
 {
     //

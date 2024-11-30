@@ -27,6 +27,7 @@ class UserPasswordRequest extends FormRequest
             //
             'current_password' => ['required', 'current_password'],
             'password' => ['required','confirmed', Password::defaults()],
+            'password_confirmation' => ['required'], // adding due to scribe documentation
         ];
     }
 }

@@ -11,7 +11,10 @@ use App\Models\Parking;
 //
 use App\Services\ParkingPriceService;
 
-
+/**
+ * @group Parking
+ * @authenticated
+ */
 class ParkingController extends Controller
 {
     //
